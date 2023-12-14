@@ -48,3 +48,10 @@ class ResourceManager:
         if 0 <= index < len(self.resources):
             del self.resources[index]
             self.save_resources()
+            
+def print_resources(resources):
+    if not resources:
+        print("No resources found.")
+    else:
+        for i, resource in enumerate(resources):
+            print(f"{i + 1}. {resource.name} - {resource.description}")
