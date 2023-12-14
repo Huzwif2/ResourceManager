@@ -55,3 +55,22 @@ def print_resources(resources):
     else:
         for i, resource in enumerate(resources):
             print(f"{i + 1}. {resource.name} - {resource.description}")
+
+def main():
+    resource_manager = ResourceManager()
+
+    while True:
+        print("\nMenu:")
+        print("1. Create Resource")
+        print("2. Search Resources")
+        print("3. Edit Resource")
+        print("4. Delete Resource")
+        print("5. Exit")
+
+        choice = input("Enter your choice (1-5): ")
+
+        if choice == '1':
+            name = input("Enter resource name: ")
+            description = input("Enter resource description: ")
+            resource_manager.create_resource(name, description)
+            print("Resource created successfully.")
