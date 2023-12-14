@@ -89,3 +89,21 @@ def main():
                 print("Resource edited successfully.")
             else:
                 print("Invalid index. Please try again.")
+
+        elif choice == '4':
+            index = int(input("Enter the index of the resource to delete: ")) - 1
+            if 0 <= index < len(resource_manager.resources):
+                resource_manager.delete_resource(index)
+                print("Resource deleted successfully.")
+            else:
+                print("Invalid index. Please try again.")
+
+        elif choice == '5':
+            print("Exiting program. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please enter a number between 1 and 5.")
+
+if __name__ == "__main__":
+    main()
