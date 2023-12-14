@@ -74,3 +74,18 @@ def main():
             description = input("Enter resource description: ")
             resource_manager.create_resource(name, description)
             print("Resource created successfully.")
+
+        elif choice == '2':
+            keyword = input("Enter search keyword: ")
+            found_resources = resource_manager.search_resources(keyword)
+            print_resources(found_resources)
+
+        elif choice == '3':
+            index = int(input("Enter the index of the resource to edit: ")) - 1
+            if 0 <= index < len(resource_manager.resources):
+                new_name = input("Enter new name: ")
+                new_description = input("Enter new description: ")
+                resource_manager.edit_resource(index, new_name, new_description)
+                print("Resource edited successfully.")
+            else:
+                print("Invalid index. Please try again.")
